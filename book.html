@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Home - Kenya Home Booking</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f9; text-align:center; margin-top:50px; }
+    h2 { color:#2c3e50; }
+    input { padding:10px; width:300px; margin:8px; border:1px solid #ccc; border-radius:5px; }
+    button { background:#27ae60; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; }
+    button:hover { background:#219150; }
+    .home-info { margin-bottom:20px; font-weight:bold; color:#e74c3c; }
+  </style>
+</head>
+<body>
+  <h2>Book Home</h2>
+  <p id="homeInfo" class="home-info"></p>
+
+  <input type="text" id="name" placeholder="Your Name"><br>
+  <input type="number" id="age" placeholder="Your Age"><br>
+  <input type="text" id="location" placeholder="Your Location"><br>
+  <button onclick="submitBooking()">Submit</button>
+
+  <script>
+    // Get query parameters from URL
+    const params = new URLSearchParams(window.location.search);
+    const homeLocation = params.get("location");
+    const homePrice = params.get("price");
+    document.getElementById("homeInfo").innerText = "Booking Home at " + homeLocation + " for " + homePrice;
+
+    function submitBooking() {
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let loc = document.getElementById("location").value;
+      if(name && age && loc) {
+        alert("Booking submitted!\nName: " + name + "\nAge: " + age + "\nLocation: " + loc + "\nHome: " + homeLocation + " (" + homePrice + ")");
+        // Redirect back to houses page
+        window.location.href = "houses.html";
+      } else {
+        alert("Please fill all fields!");
+      }
+    }
+  </script>
+</body>
+</html>

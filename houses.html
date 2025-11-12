@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Homes - Kenya Home Booking</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f9; }
+    h2 { text-align:center; color:#2c3e50; }
+    .homes { display:flex; flex-wrap:wrap; justify-content:center; }
+    .home-card {
+      background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      margin:15px; width:220px; text-align:center; padding:15px;
+      transition: transform 0.2s;
+    }
+    .home-card:hover { transform: scale(1.05); }
+    .home-card img { width:100%; height:140px; object-fit:cover; border-radius:6px; }
+    .price { color:#e74c3c; font-weight:bold; }
+    button { background:#27ae60; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer; }
+    button:hover { background:#219150; }
+  </style>
+</head>
+<body>
+  <h2>Available Homes</h2>
+  <div class="homes">
+
+    <!-- Home 1 -->
+    <div class="home-card">
+      <img src="images/house1.jpg" alt="Nairobi Home">
+      <p>Location: Nairobi</p>
+      <p class="price">KES 50,000/month</p>
+      <button onclick="book('Nairobi','KES 50,000/month')">Book</button>
+    </div>
+
+    <!-- Home 2 -->
+    <div class="home-card">
+      <img src="images/house2.jpg" alt="Embu Home">
+      <p>Location: Embu</p>
+      <p class="price">KES 30,000/month</p>
+      <button onclick="book('Embu','KES 30,000/month')">Book</button>
+    </div>
+
+    <!-- Home 3 -->
+    <div class="home-card">
+      <img src="images/house3.jpg" alt="Mombasa Home">
+      <p>Location: Mombasa</p>
+      <p class="price">KES 45,000/month</p>
+      <button onclick="book('Mombasa','KES 45,000/month')">Book</button>
+    </div>
+
+    <!-- Home 4 -->
+    <div class="home-card">
+      <img src="images/house4.jpg" alt="Kisumu Home">
+      <p>Location: Kisumu</p>
+      <p class="price">KES 35,000/month</p>
+      <button onclick="book('Kisumu','KES 35,000/month')">Book</button>
+    </div>
+
+    <!-- Home 5 -->
+    <div class="home-card">
+      <img src="images/house5.jpg" alt="Nakuru Home">
+      <p>Location: Nakuru</p>
+      <p class="price">KES 40,000/month</p>
+      <button onclick="book('Nakuru','KES 40,000/month')">Book</button>
+    </div>
+
+    <!-- Home 6 -->
+    <div class="home-card">
+      <img src="images/house6.jpg" alt="Thika Home">
+      <p>Location: Thika</p>
+      <p class="price">KES 32,000/month</p>
+      <button onclick="book('Thika','KES 32,000/month')">Book</button>
+    </div>
+
+    <!-- Home 7 -->
+    <div class="home-card">
+      <img src="images/house7.jpg" alt="Meru Home">
+      <p>Location: Meru</p>
+      <p class="price">KES 37,000/month</p>
+      <button onclick="book('Meru','KES 37,000/month')">Book</button>
+    </div>
+
+  </div>
+
+  <script>
+    function book(location, price) {
+      // Redirect to booking page with query parameters
+      window.location.href = "book.html?location=" + encodeURIComponent(location) + "&price=" + encodeURIComponent(price);
+    }
+  </script>
+</body>
+</html>
